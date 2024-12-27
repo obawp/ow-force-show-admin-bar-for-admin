@@ -1,10 +1,11 @@
-=== OW Force show admin bar for admin ===
+
+=== OW Force Show Admin Bar for Admin ===
 Contributors: ObaWP
-Donate link: https://obawp.com.br/plugin/always-show-admin-bar-to-admin/
+Donate link: https://obawp.com/plugin/always-show-admin-bar-to-admin/
 Tags: adminbar, admin, bar, preview
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 0.1
+Tested up to: 6.7
+Stable tag: 0.2
 Requires PHP: 8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,34 +14,42 @@ Always shows the admin bar to admin in the preview.
 
 == Description ==
 
-Always shows the admin bar to admin in the preview.
-Some plugins and themes hide the admin bar, making editing difficult.
+Some plugins and themes hide the admin bar, making editing difficult. Ensures the admin bar is always visible for users with administrative privileges. 
 
-Compatibility:
+**Compatibility:**
 
-- Wordpress preview (show)
+- WordPress preview (show)
 - Customizer (do not show)
 - Elementor editor (do not show)
 - Elementor preview (show)
 
 == Installation ==
 
-Install and activate
+1. Download the plugin.
+2. Upload the plugin folder to the `/wp-content/plugins/` directory.
+3. Activate the plugin through the **Plugins** menu in WordPress.
 
 == Frequently Asked Questions ==
 
-= How use? =
+= How do I use this plugin? =
 
-Simply install and it did the work.
-
+Simply install and activate the plugin. It will automatically ensure the admin bar is visible for admin users in the preview.
 
 == Screenshots ==
 
+1. Admin bar visible in WordPress and Elementor preview.
 
 == Changelog ==
 
+= 0.2 =
+* Added nonce verification for improved security.
+* Sanitized and validated all inputs.
+* Updated `Tested up to` to WordPress 6.7.
+
 = 0.1 =
-* Initial Release
+* Initial release.
 
 == Upgrade Notice ==
 
+= 0.2 =
+This update includes security improvements, input sanitization, and compatibility with WordPress 6.7. Upgrade to ensure the best performance and security.

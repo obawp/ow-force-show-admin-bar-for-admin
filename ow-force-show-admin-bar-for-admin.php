@@ -1,22 +1,49 @@
 <?php
 /*
-Plugin Name: OW Force show admin bar for admin
-Plugin URI: https://obawp.com.br/plugin/always-show-admin-bar-to-admin/
-Description: Always show the admin bar to Admin
+Plugin Name: OW Force Show Admin Bar for Admin
+Plugin URI: https://obawp.com/plugin/ow-force-show-admin-bar-for-admin/
+Description: Ensures the admin bar is always visible for users with administrative privileges, except in specific conditions.
+Version: 0.2
 Author: ObaWP
-Version: 0.1
-Author URI: https://obawp.com.br
+Author URI: https://obawp.com
+Text Domain: ow-force-show-admin-bar-for-admin
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 6.7
 */
 
-add_action("init", function () {
-  $is_admin = current_user_can('manage_options');  // all user they have manage option will get 
-  $elementor = isset($_GET['elementor-preview']);
-  $preview = ($_GET['preview'] ?? false) == 'true';
-  $customize = strpos($_SERVER['REQUEST_URI'], 'customize_changeset_uuid') !== false;
-  if (
-    ($is_admin && !$elementor && !$customize)
-    || ($is_admin && $preview)
-  ) {
-    add_filter("show_admin_bar", "__return_true");
-  } 
-});
+add_action("init", "ow_force_show_admin_bar_for_admin");
+
+/**
+ * Forces the admin bar to be shown for admin users, except in specific scenarios.
+ *
+ * @return void
+ */
+function ow_force_show_admin_bar_for_admin() {
+    // Check if the current user has administrative capabilities
+    $is_admin = current_user_can('manage_options');
+
+    // Validate and sanitize the 'elementor-preview' parameter
+    $is_elementor_preview = isset($_GET['elementor-preview']) && wp_verify_nonce(
+        sanitize_key($_GET['_wpnonce'] ?? ''),
+        'elementor-preview-nonce'
+    );
+
+    // Validate and sanitize the 'preview' parameter
+    $is_preview = (sanitize_text_field(wp_unslash($_GET['preview'] ?? '')) === 'true') && wp_verify_nonce(
+        sanitize_key($_GET['_wpnonce'] ?? ''),
+        'preview-nonce'
+    );
+
+    // Sanitize the request URI for customizer check
+    $request_uri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'] ?? ''));
+    $is_customize = strpos($request_uri, 'customize_changeset_uuid') !== false;
+
+    // Show the admin bar for admins, except in Elementor preview or customizer changeset
+    if (
+        ($is_admin && !$is_elementor_preview && !$is_customize) ||
+        ($is_admin && $is_preview)
+    ) {
+        add_filter("show_admin_bar", "__return_true");
+    }
+}
