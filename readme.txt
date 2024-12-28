@@ -15,12 +15,16 @@ Always shows the admin bar to admin in the preview.
 
 Ensures the admin bar is always visible for users with administrative privileges, except in specific conditions. Some plugins and themes hide the admin bar, making editing difficult.
 
+Please note that there is no guarantee that this plugin will work in all cases. Consider this before evaluating its effectiveness.
+
 **Compatibility:**
 
 - WordPress preview (show)
 - Customizer (do not show)
 - Elementor editor (do not show)
 - Elementor preview (show)
+
+
 
 == Installation ==
 
