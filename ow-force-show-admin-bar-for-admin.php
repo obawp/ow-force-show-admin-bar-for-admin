@@ -12,6 +12,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tested up to: 6.7
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+
 add_action("init", "ow_force_show_admin_bar_for_admin");
 
 /**
