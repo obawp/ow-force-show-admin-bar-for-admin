@@ -47,6 +47,9 @@ Simply install and activate the plugin. It will automatically ensure the admin b
 
 == Changelog ==
 
+= 0.2.1 =
+* Update: contributors and donation link in README
+
 = 0.2 =
 * Added nonce verification for improved security.
 * Sanitized and validated all inputs.
