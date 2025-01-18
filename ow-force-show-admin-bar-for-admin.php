@@ -3,7 +3,7 @@
 Plugin Name: OW Force Show Admin Bar for Admin
 Plugin URI: https://obawp.com/plugin/ow-force-show-admin-bar-for-admin/
 Description: Ensures the admin bar is always visible for users with administrative privileges, except in specific conditions.
-Version: 0.2
+Version: 0.2.1
 Author: ObaWP
 Author URI: https://obawp.com
 Text Domain: ow-force-show-admin-bar-for-admin

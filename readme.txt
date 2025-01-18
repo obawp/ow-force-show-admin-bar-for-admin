@@ -4,7 +4,7 @@ Donate link: https://obawp.com/doacoes/
 Tags: adminbar, admin, bar, preview
 Requires at least: 4.0
 Tested up to: 6.7
-Stable tag: 0.2
+Stable tag: 0.2.1
 Requires PHP: 8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
