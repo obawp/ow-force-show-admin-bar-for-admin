@@ -1,6 +1,6 @@
 === OW Force Show Admin Bar for Admin ===
-Contributors: ObaWP
-Donate link: https://obawp.com/plugin/always-show-admin-bar-to-admin/
+Contributors: antonio24073, obawp
+Donate link: https://obawp.com/doacoes/
 Tags: adminbar, admin, bar, preview
 Requires at least: 4.0
 Tested up to: 6.7
